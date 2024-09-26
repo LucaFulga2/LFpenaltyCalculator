@@ -160,7 +160,7 @@ tr:nth-child(even) td {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
-.raceInput button:active {
+.raceInput button.active {
     transform: translateY(0);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -208,7 +208,7 @@ tr:nth-child(even) td {
 }
 
 /* Mobile adjustments vertical adjusments*/
-@media (max-width: 540px) {
+@media (max-width: 600px) {
 
     /* Header section adjustment */
     .header-container {
@@ -252,10 +252,19 @@ tr:nth-child(even) td {
         width: 200px;
         font-size: 0.9em;
     }
+
+    .raceInput button:hover {
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .raceInput button:hover::before {
+        opacity: 0;
+    }
 }
 
 /* Mobile horizontal adjustments */
-@media (max-height: 500px) {
+@media (max-height: 600px) {
 
     /* Header section adjustment - move image to the left of the title */
     .header-container {
@@ -293,5 +302,14 @@ tr:nth-child(even) td {
         width: 90%;
         max-width: 400px;
         font-size: 0.9em;
+    }
+
+    .raceInput button:hover {
+        transform: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .raceInput button:hover::before {
+        opacity: 0;
     }
 }

@@ -315,7 +315,7 @@ async function penaltyCalculator(fastestTime, f, athletes) {
         else if (raceType == 3) {
             return 15;
         }
-        else{
+        else {
 
         }
     }
