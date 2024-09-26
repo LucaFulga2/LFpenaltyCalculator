@@ -1,0 +1,54 @@
+<!-- 
+  LUCA FULGA - May, 2023
+  This program creates a website with a user interface that is
+  compatible with the penalty calculator js file in this project
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L.F Penalty Calculator</title>
+  <script src="scraperLogic mod.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://thispersondoesnotexist.com/" type="image/x-icon">
+</head>
+
+<body>
+  <!-- Header with Title -->
+  <div class="header-container">
+    <img id="random-image" class="random-image" src="https://thispersondoesnotexist.com/" alt="Random Person" />
+    <h1 class="header">LOW FLUORO PENALTY CALCULATOR</h1>
+  </div>
+
+  
+
+  <!-- Race Input Form -->
+  <form class="raceInput" id="userInputSection">
+    <input id="raceInput" class="query" type="text" placeholder="LIVETIMING RACE LINK">
+    <button type="button" id="calculatePenButton" onclick="main()">CALCULATE PENALTY</button>
+  </form>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <h2>SELECT AN OPTION</h2>
+      <select id="dropdownMenu">
+        <option value="-" disabled selected> </option>
+        <option value="1">FIS</option>
+        <option value="2">NATIONAL CHAMPIONSHIPS</option>
+        <option value="3">CONTINENTAL CUP</option>
+      </select>
+      <br>
+      <button class="close-btn" id="closeModalBtn">Enter</button>
+    </div>
+  </div>
+
+
+
+  <!-- Table Container -->
+  <div id="table-container" class="table-container"></div>
+</body>
+
+</html>

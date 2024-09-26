@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    text-align: center;
+    color: rgb(20, 20, 20);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for image and title */
+.header-container {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    color: rgb(240, 232, 232);
+    transform: scale(1, 2.1);
+    /* Stretch the text vertically */
+    display: inline-block;
+    /* Make the transform apply only to the text */
+    margin: 15px auto;
+    margin-top: 30px;
+}
+
+/* Form centering */
+.raceInput {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.raceInput input::placeholder {
+    text-align: center;
+    /* Centers the placeholder text */
+}
+
+.query {
+    width: 300px;
+    margin: 5px auto;
+    margin-top: 0px;
+}
+
+
+/* Table adjustments */
+table {
+    width: 80%;
+    /* Fixed width on larger screens */
+    max-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px auto;
+    font-family: Arial;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+th {
+    background-color: #d6cece;
+    border: 3px solid rgb(24, 23, 23);
+    padding: 10px;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+}
+
+th::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 3px solid rgb(24, 23, 23);
+}
+
+td {
+    border: 1px solid rgb(15, 15, 15);
+    padding: 8px;
+    text-align: left;
+    background-color: white;
+}
+
+tr:nth-child(even) td {
+    background-color: #f3ebeb;
+}
+
+.query {
+    background: linear-gradient(145deg, #0f0f0f2d, #25b8122a);
+    border: 3px solid #ffffff;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 3px 6px;
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.query::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.query:focus {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.raceInput button {
+    background: linear-gradient(145deg, #0f0f0f, #25b812);
+    border: 4px solid #ffffff;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 3px 6px;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 300px;
+}
+
+.raceInput button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), transparent);
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.raceInput button:hover::before {
+    opacity: 1;
+}
+
+.raceInput button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.raceInput button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.random-image {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    margin-bottom: 20px;
+}
+
+.faded {
+    opacity: 0.5;
+}
+
+/* Modal styling */
+.modal {
+    z-index: 2;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-btn {
+    background-color: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Mobile adjustments vertical adjusments*/
+@media (max-width: 540px) {
+
+    /* Header section adjustment */
+    .header-container {
+        flex-direction: column-reverse;
+    }
+
+    .header {
+        font-size: 25px;
+        line-height: 25px;
+        margin: 40px auto;
+        margin-bottom: 30px;
+    }
+
+
+    /* Make table 100% width on small devices */
+    table {
+        width: 100%;
+        max-width: 100%;
+        font-size: 0.6em;
+        /* Smaller font for mobile */
+    }
+
+    th,
+    td {
+        padding: 2px;
+    }
+
+    .random-image {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        margin: 20px auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        /* Center the image */
+    }
+
+    /* Button and input adjustments */
+    .raceInput input,
+    .raceInput button {
+        width: 200px;
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile horizontal adjustments */
+@media (max-height: 500px) {
+
+    /* Header section adjustment - move image to the left of the title */
+    .header-container {
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        line-height: 50px;
+        margin: 40px auto;
+        margin-left: 5px;
+        margin-bottom: 10px;
+    }
+
+
+    th,
+    td {
+        padding: 2px;
+    }
+
+    .random-image {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        /* Center the image horizontally */
+    }
+
+    /* Button and input adjustments */
+    .raceInput input,
+    .raceInput button {
+        width: 90%;
+        max-width: 400px;
+        font-size: 0.9em;
+    }
+}
